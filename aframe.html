@@ -1,0 +1,84 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>360&deg; Video - A-Frame</title>
+    <meta name="description" content="360&deg; Video - A-Frame">
+    <script src="script/aframe.min.js"></script>
+    <script src="script/aframe-video-controls.min.js"></script>
+    <script src="script/aframe-animation-component.min.js"></script>
+    <script src="script/aframe-event-set-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="video-pause-image" crossorigin src="https://cdn.aframe.io/360-video-boilerplate/img/pause.png">
+        <img id="video-play-image" crossorigin src="https://cdn.aframe.io/360-video-boilerplate/img/play.png">
+        <video id="cityVideo" autoplay loop crossorigin
+               src="https://cdn.aframe.io/360-video-boilerplate/video/city.mp4"></video>
+      </a-assets> -->
+
+      <!-- 360 video, rotated 180-degrees to select an initial view. -->
+      <!-- <a-videosphere src="#cityVideo" rotation="0 180 0"></a-videosphere> -->
+
+      <!-- Video controls. -->
+      <!-- <a-entity
+        video-controls="src: #cityVideo; backgroundColor: #333; barColor: #EF2D5E; textColor: #DADADA; infoTextTop: Gaze and click on the icon or progress bar.; infoTextBottom: Double-click outside of the player to toggle it."
+        position="0 1 -2"></a-entity> -->
+
+      <!-- Cursor to interact with video controls, with visual feedback. -->
+      <!-- <a-camera user-height="1.6">
+        <a-cursor color="#333"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+          event-set__1="_event: mouseenter; color: springgreen"
+          event-set__2="_event: mouseleave; color: #333"></a-cursor>
+      </a-camera>
+    </a-scene>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>360 Video</title>
+    <meta name="description" content="360 Video — A-Frame">
+    <script src="script/aframe.min.js"></script>
+  </head>
+  <body>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId            : 'your-app-id',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v2.10'
+        });
+        FB.AppEvents.logPageView();
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <a-scene>
+      <!-- <a-assets> -->
+        <!-- <video id="video" src="blob:https://www.facebook.com/1127182a-1ae0-4419-919e-de1c0cda91cb"
+               autoplay loop crossorigin="anonymous"></video> -->
+               <!-- <video id="video" autoplay loop height="293" width="520" preload="metadata" style="" crossorigin="anonymous" class="_ox1 _3axk" data-video-width="520" data-video-height="293" id="u_fetchstream_8_5" src="blob:https://www.facebook.com/1127182a-1ae0-4419-919e-de1c0cda91cb"></video> -->
+               <!-- <iframe id="video" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fnatgeowild%2Fvideos%2Fvb.196008660929%2F10155432209165930%2F%3Ftype%3D2%26theater&width=500&show_text=false&appId=256411237748742&height=283" width="500" height="283" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe> -->
+               <!-- <div id="video" class="fb-video" data-href="https://www.facebook.com/natgeowild/videos/vb.196008660929/10155432209165930/?type=2&amp;theater" data-width="500" data-show-text="false"><blockquote cite="https://www.facebook.com/natgeowild/videos/10155432209165930/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/natgeowild/videos/10155432209165930/">360° Great Hammerhead Shark Encounter</a><p>Dive into this 360° video and go face to face with a curious great hammerhead shark. #SharkFest</p>由 <a href="https://www.facebook.com/natgeowild/">Nat Geo Wild</a> 貼上了 2017年7月23日</blockquote></div> -->
+      <!-- </a-assets> -->
+      <a-assets>
+        <video id="video" src="https://video.xx.fbcdn.net/v/t42.1790-2/22823914_526716797663736_1062488378324287488_n.mp4?efg=eyJybHIiOjE1MDAsInJsYSI6NDA5NiwidmVuY29kZV90YWciOiJzdmUzNjBfcWZfNTEyd19jcmZfMjFfbWFpbl80LjJfcDEwX3NkIn0%3D&rl=1500&vabr=727&oh=e77cc50fb1a7811dd311983546bdf7b2&oe=59F28E82" autoplay="" loop="" crossorigin="anonymous" controls="" webkit-playsinline=""></video>
+      </a-assets>
+      <a-videosphere src="#video" rotation="0 180 0"></a-videosphere>
+      <!-- <a-entity id="bbb" geometry="primitive:box;width:50;height:50;depth:50;" rotation="30 30 0" position="0 2 0" material="shader:video;src:#video;"></a-entity> -->
+    </a-scene>
+  </body>
+</html>

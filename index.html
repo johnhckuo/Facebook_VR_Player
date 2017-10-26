@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Video Cube UV Mapping</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <style>
+    body {
+      font-family: Monospace;
+      background-color: #000000;
+      margin: 0px;
+      overflow: hidden;
+    }
+
+    #info {
+      color: #fff;
+      position: absolute;
+      top: 10px;
+      width: 100%;
+      text-align: center;
+      z-index: 100;
+      display: block;
+    }
+
+    a {
+      color: red
+    }
+
+    #container {
+      width: 100%;
+      height: 100vh;
+    }
+
+    form {
+      color: white;
+    }
+
+    div#controls {
+      position: absolute;
+      right: 2px;
+      top: 2px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="info">
+    Video Cube UV Mapping
+  </div>
+
+  <video id="video" autoplay loop crossorigin="anonymous" style="display:none">
+    <source src="video/test.mp4" type='video/mp4'>
+  </video>
+
+  <div id="container"></div>
+
+  <script src="script/three.min.js"></script>
+
+  <script src="script/stats.min.js"></script>
+  <script src="script/OrbitControls.js"></script>
+  <script src="script/index.js"></script>
+
+</body>
+
+</html>
