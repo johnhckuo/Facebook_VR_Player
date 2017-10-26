@@ -1,3 +1,5 @@
-# A-Frame Boilerplate
+# Facebook 360 Video Player
 
-Starter kit for displaying 360&deg; videos.
+A web VR player for Facebook 360 video using A-Frame.
+
+Note: This project is still under development .
