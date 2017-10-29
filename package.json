@@ -4,12 +4,12 @@
   "version": "0.3.0-beta1",
   "license": "MIT",
   "scripts": {
-    "start": "budo --live --verbose --port 3000 --open",
+    "start": "http-server ./ -c-1",
     "deploy": "ghpages",
     "ghpages": "ghpages"
   },
   "devDependencies": {
-    "budo": "^7.0.0",
+    "http-server": "latest",
     "ghpages": "0.0.3"
   },
   "keywords": [
