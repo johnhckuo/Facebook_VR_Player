@@ -1,6 +1,9 @@
+function retrieveData(id){
 
-function retrieveData(){
-  FB.api('/me', {fields: 'last_name'}, function(response) {
-    console.log(response);
+  FB.api('/'+id, {fields: 'videos{source}'}, function(response) {
+    console.log("video retrieval success");
+    var videos = response.videos.data;
+    console.log(videos);
+
   });
 }

@@ -8,35 +8,31 @@ var stats;
 var controls;
 var cubeLength = 50;
 
-init();
+threejs_init();
+ui_init();
 animate();
 
-function init() {
+function initValue(){
+  this.page_Id = '360vidz';
+  this.speed = 1;
+  this.pause = false;
+  this.submit = function() {
+    var _id = this.video_Id;
+    FB.getLoginStatus(function(response){
+      retrieveData(_id);
+    });
+  };
+
+};
+
+
+function threejs_init() {
 
   if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
-
-  stats = new Stats();
-  document.body.appendChild(stats.dom);
 
   scene = new THREE.Scene();
   camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 1000 );
   camera.position.z = 1;
-
-  controls = new THREE.TrackballControls( camera );
-
-	controls.rotateSpeed = 1.0;
-	controls.zoomSpeed = 1.2;
-	controls.panSpeed = 0.8;
-
-	controls.noZoom = false;
-	controls.noPan = false;
-
-	controls.staticMoving = true;
-	controls.dynamicDampingFactor = 0.3;
-
-	controls.keys = [ 65, 83, 68 ];
-
-	controls.addEventListener( 'change', render );
 
   //light
 
@@ -98,12 +94,48 @@ function init() {
   container = document.getElementById( 'container' );
   container.appendChild( renderer.domElement );
 
-  stats = new Stats();
-  container.appendChild( stats.dom );
+  // track ball controller
+  controls = new THREE.TrackballControls( camera, renderer.domElement );
+
+  controls.rotateSpeed = 1.0;
+  controls.zoomSpeed = 1.2;
+  controls.panSpeed = 0.8;
+
+  controls.noZoom = false;
+  controls.noPan = false;
+
+  controls.staticMoving = true;
+  controls.dynamicDampingFactor = 0.3;
+
+  controls.keys = [ 65, 83, 68 ];
+
+  controls.addEventListener( 'change', render );
+
 
   window.addEventListener( 'resize', onWindowResize, false );
 
   render();
+}
+
+function ui_init(){
+
+    // stat
+    stats = new Stats();
+    container.appendChild( stats.dom );
+
+    // dat gui
+    var value = new initValue();
+    var gui = new dat.GUI();
+
+    var f1 = gui.addFolder('Video Source');
+    f1.add(value, 'page_Id');
+    f1.add(value, 'submit');
+
+    var f2 = gui.addFolder('Video Controller');
+    f2.add(value, 'speed', 0, 2);
+    f2.add(value, 'pause');
+
+
 }
 
 function animate() {

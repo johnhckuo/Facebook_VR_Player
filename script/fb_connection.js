@@ -5,11 +5,6 @@ window.fbAsyncInit = function() {
     version    : 'v2.10'
   });
   FB.AppEvents.logPageView();
-
-  FB.getLoginStatus(function(response){
-    retrieveData();
-  });
-
 };
 
 (function(d, s, id){

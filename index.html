@@ -2,13 +2,12 @@
 <html lang="en">
 
 <head>
-  <title>Video Cube UV Mapping</title>
+  <title>Facebook 360 Video Cube</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   <style>
     body {
       font-family: Monospace;
-      background-color: #000000;
       margin: 0px;
       overflow: hidden;
     }
@@ -23,23 +22,9 @@
       display: block;
     }
 
-    a {
-      color: red
-    }
-
     #container {
       width: 100%;
       height: 100vh;
-    }
-
-    form {
-      color: white;
-    }
-
-    div#controls {
-      position: absolute;
-      right: 2px;
-      top: 2px;
     }
 
   </style>
@@ -47,7 +32,7 @@
 
 <body>
   <div id="info">
-    Video Cube UV Mapping
+    Facebook 360 Video Cube
   </div>
 
   <video id="video" autoplay loop crossorigin="anonymous" style="display:none">
@@ -62,6 +47,7 @@
   <script src="script/TrackballControls.js"></script>
   <script src="script/Detector.js"></script>
   <script src="script/jquery.min.js"></script>
+  <script src="script/dat.gui.min.js"></script>
   <script src="script/fb_connection.js"></script>
   <script src="script/fb_retrieval.js"></script>
   <script src="script/main.js"></script>
