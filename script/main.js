@@ -12,19 +12,25 @@ threejs_init();
 ui_init();
 animate();
 
+function displayVideoList(videos){
+  console.log(videos)
+  for (var i = 0 ; i < videos.length ; i++){
+    $(".videoTable tbody").append("<th scope='row'>"+ (i+1) +"</th><td>"+videos[i].source+"</td><td>"+videos[i].source+"</td>");
+  }
+}
+
 function initValue(){
   this.page_Id = '360vidz';
   this.speed = 1;
   this.pause = false;
   this.submit = function() {
-    var _id = this.video_Id;
-    FB.getLoginStatus(function(response){
-      retrieveData(_id);
+    var _id = this.page_Id;
+    FB.getLoginStatus(async function(response){
+      var videos = await retrieveData(_id);
+      displayVideoList(videos);
     });
   };
-
 };
-
 
 function threejs_init() {
 
@@ -139,8 +145,6 @@ function ui_init(){
 }
 
 function animate() {
-  // mesh.rotation.x += 0.02;
-  // mesh.rotation.y += 0.01;
 
   requestAnimationFrame(animate);
   controls.update();
