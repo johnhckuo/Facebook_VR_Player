@@ -1,7 +1,7 @@
 var camera;
 var scene;
 var renderer;
-var mesh;
+var cube;
 var videoTexture;
 var video;
 var stats;
@@ -10,12 +10,55 @@ var cubeLength = 50;
 
 threejs_init();
 ui_init();
+event_init();
 animate();
 
+function playVideo(src){
+  $("#video source").attr("src", src);
+
+  video = document.getElementById( 'video' );
+  videoTexture = new THREE.VideoTexture(video);
+  videoTexture.minFilter = THREE.LinearFilter;
+  videoTexture.magFilter = THREE.LinearFilter;
+  videoTexture.format = THREE.RGBFormat;
+
+
+
+  cube.material.map = videoTexture;
+
+  // // instantiate a loader
+  // var loader = new THREE.TextureLoader();
+  //
+  // loader.setCrossOrigin("anonymous");
+  // // load a resource
+  // loader.load(
+  // 	// resource URL
+  // 	src,
+  // 	// Function when resource is loaded
+  // 	function ( texture ) {
+  // 		// do something with the texture
+  // 		// var material = new THREE.MeshBasicMaterial( {
+  // 		// 	map: texture
+  // 		//  } );
+  //     cube.material.map = texture;
+  // 	},
+  // 	// Function called when download progresses
+  // 	function ( xhr ) {
+  // 		console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
+  // 	},
+  // 	// Function called when download errors
+  // 	function ( xhr ) {
+  //     console.log(xhr);
+  // 		console.log( 'An error happened');
+  // 	}
+  // );
+
+}
+
 function displayVideoList(videos){
-  console.log(videos)
+  console.log(videos);
   for (var i = 0 ; i < videos.length ; i++){
-    $(".videoTable tbody").append("<th scope='row'>"+ (i+1) +"</th><td>"+videos[i].source+"</td><td>"+videos[i].source+"</td>");
+    $(".videoTable tbody").append("<tr><th scope='row'>"+ (i+1) +"</th><td>"+videos[i].title+"</td><td><button type='button' class='btn' value="+videos[i].source+">Play</button></td></tr>");
   }
 }
 
@@ -25,9 +68,12 @@ function initValue(){
   this.pause = false;
   this.submit = function() {
     var _id = this.page_Id;
-    FB.getLoginStatus(async function(response){
-      var videos = await retrieveData(_id);
-      displayVideoList(videos);
+    FB.getLoginStatus(function(response){
+      if (response.status != "connected"){
+        alert("You haven't login yet!");
+        return;
+      }
+      retrieveData(_id);
     });
   };
 };
@@ -87,9 +133,14 @@ function threejs_init() {
   geometry.faceVertexUvs[0][10] = [face4[0], face4[1], face4[3]];
   geometry.faceVertexUvs[0][11] = [face4[1], face4[2], face4[3]];
 
-  mesh = new THREE.Mesh(geometry, material);
-  mesh.position.z = 1;
-  scene.add(mesh);
+  cube = new THREE.Mesh(geometry, material);
+  cube.position.z = 1;
+  cube.material.map.needsUpdate = true;
+  cube.material.needsUpdate = true;
+  // cube.material.texture.needsUpdate = true;
+  cube.needsUpdate = true;
+
+  scene.add(cube);
 
   // renderer
 
@@ -142,6 +193,13 @@ function ui_init(){
     f2.add(value, 'pause');
 
 
+}
+
+function event_init(){
+  $(".videoTable").on("click", "button", function(){
+    console.log(this.value);
+    playVideo(this.value);
+  });
 }
 
 function animate() {
