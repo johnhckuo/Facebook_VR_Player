@@ -4,48 +4,51 @@
   <title>Facebook 360 Video Cube</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
   <link rel="stylesheet" href="/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/main.css">
-</head>
 
-<body>
-  <div id="info">
-    Facebook 360 Video Cube
-  </div>
-
-  <video id="video" autoplay loop crossorigin="anonymous" style="display:none">
-    <source src="video/test.mp4" type='video/mp4'>
-  </video>
-
-  <div id="container"></div>
-
-  <div id="videoList">
-    <div class="listContainer">
-      <table class="videoTable table table-hover table-inverse">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Title</th>
-            <th>Link</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- script -->
   <script src="script/three.min.js"></script>
-  <script src="script/stats.min.js"></script>
-  <script src="script/TrackballControls.js"></script>
-  <script src="script/Detector.js"></script>
+  <script src="script/aframe.min.js"></script>
   <script src="script/jquery.min.js"></script>
   <script src="script/dat.gui.min.js"></script>
   <script src="script/fb_connection.js"></script>
   <script src="script/fb_retrieval.js"></script>
   <script src="script/main.js"></script>
 
-</body>
+</head>
 
+<body>
+  <a-scene>
+    <div id="info">
+      Facebook 360 Video Cube
+    </div>
+    <div id="container"></div>
+
+    <div id="videoList">
+      <div class="listContainer">
+        <table class="videoTable table table-hover table-inverse">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Title</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <a-assets>
+      <video id="video" autoplay loop crossorigin="anonymous" style="display:none">
+        <source src="video/test.mp4" type='video/mp4'>
+      </video>
+    </a-assets>
+    <a-entity videocube id="videoCube"></a-entity>
+  </a-scene>
+
+  <script src="script/ui.js"></script>
+</body>
 </html>

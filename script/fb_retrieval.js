@@ -4,6 +4,7 @@ function retrieveData(id){
     console.log("video retrieval success");
     $("#videoList").fadeIn();
     videoRetrieved = true;
+    gui_value.showVideoList = true;
     var videos = response.videos.data;
     displayVideoList(videos);
     return videos;
