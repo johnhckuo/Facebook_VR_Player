@@ -1,59 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <title>Facebook 360 Video Cube</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <style>
-    body {
-      font-family: Monospace;
-      margin: 0px;
-      overflow: hidden;
-    }
-
-    #info {
-      color: #fff;
-      position: absolute;
-      top: 10px;
-      width: 100%;
-      text-align: center;
-      z-index: 100;
-      display: block;
-    }
-
-    #container {
-      width: 100%;
-      height: 100vh;
-    }
-
-    #videoList{
-      position: absolute;
-      top:0px;
-      left:0px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width:100%;
-      height:100%;
-    }
-
-    .videoTable{
-      display: block;
-      background: rgba(0, 0, 0, 0.5);
-      color:white;
-      width:60%;
-      height: 60%;
-      overflow: scroll;
-
-    }
-
-    .btn{
-      cursor: pointer;
-    }
-
-  </style>
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 
 <body>
@@ -68,17 +20,19 @@
   <div id="container"></div>
 
   <div id="videoList">
-    <table class="videoTable table table-hover table-inverse">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Title</th>
-          <th>Link</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
+    <div class="listContainer">
+      <table class="videoTable table table-hover table-inverse">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <!-- script -->

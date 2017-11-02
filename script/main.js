@@ -7,6 +7,7 @@ var video;
 var stats;
 var controls;
 var cubeLength = 50;
+var videoRetrieved = false;
 
 threejs_init();
 ui_init();
@@ -39,6 +40,7 @@ function initValue(){
   this.page_Id = '360vidz';
   this.speed = 1;
   this.pause = false;
+  this.showVideoList = false;
   this.submit = function() {
     var _id = this.page_Id;
     FB.getLoginStatus(function(response){
@@ -165,6 +167,19 @@ function ui_init(){
     f2.add(value, 'speed', 0, 2);
     f2.add(value, 'pause');
 
+    gui.add(value, "showVideoList").onFinishChange(function(){
+      if (!videoRetrieved){
+        alert("You haven't search for any videos yet.");
+        return;
+      }
+
+      if ($("#videoList").css("display") == "none"){
+        $("#videoList").fadeIn();
+      }else{
+        $("#videoList").fadeOut();
+      }
+    })
+
 
 }
 
@@ -172,6 +187,7 @@ function event_init(){
   $(".videoTable").on("click", "button", function(){
     console.log(this.value);
     playVideo(this.value);
+    $("#videoList").fadeOut();
   });
 }
 
