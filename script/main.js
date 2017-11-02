@@ -14,44 +14,17 @@ event_init();
 animate();
 
 function playVideo(src){
-  $("#video source").attr("src", src);
 
   video = document.getElementById( 'video' );
+  video.autoplay = true;
+  video.src = src;
+
   videoTexture = new THREE.VideoTexture(video);
   videoTexture.minFilter = THREE.LinearFilter;
   videoTexture.magFilter = THREE.LinearFilter;
   videoTexture.format = THREE.RGBFormat;
 
-
-
   cube.material.map = videoTexture;
-
-  // // instantiate a loader
-  // var loader = new THREE.TextureLoader();
-  //
-  // loader.setCrossOrigin("anonymous");
-  // // load a resource
-  // loader.load(
-  // 	// resource URL
-  // 	src,
-  // 	// Function when resource is loaded
-  // 	function ( texture ) {
-  // 		// do something with the texture
-  // 		// var material = new THREE.MeshBasicMaterial( {
-  // 		// 	map: texture
-  // 		//  } );
-  //     cube.material.map = texture;
-  // 	},
-  // 	// Function called when download progresses
-  // 	function ( xhr ) {
-  // 		console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
-  // 	},
-  // 	// Function called when download errors
-  // 	function ( xhr ) {
-  //     console.log(xhr);
-  // 		console.log( 'An error happened');
-  // 	}
-  // );
 
 }
 
@@ -213,6 +186,8 @@ function animate() {
 
 function render() {
   renderer.render(scene, camera);
+  // cube.material.needsUpdate = true;
+  // videoTexture.needsUpdate = true;
 }
 
 
