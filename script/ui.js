@@ -52,7 +52,7 @@ function playVideo(src){
 function displayVideoList(videos){
   console.log(videos);
   for (var i = 0 ; i < videos.length ; i++){
-    $(".videoTable tbody").append("<tr><th scope='row'>"+ (i+1) +"</th><td>"+videos[i].title+"</td><td><button type='button' class='btn' value="+videos[i].source+">Play</button></td></tr>");
+    $(".videoTable tbody").append("<tr><th scope='row'>"+ (i+1) +"</th><td>"+videos[i].title+"</td><td><button type='button' class='btn btn-info' value="+videos[i].source+">Play</button></td></tr>");
   }
 }
 
@@ -77,6 +77,11 @@ function event_init(){
   $(".videoTable").on("click", "button", function(){
     console.log(this.value);
     playVideo(this.value);
+    $("#videoList").fadeOut();
+    gui_value.showVideoList = false;
+  });
+
+  $(".listContainer").on("click", function(){
     $("#videoList").fadeOut();
     gui_value.showVideoList = false;
   });

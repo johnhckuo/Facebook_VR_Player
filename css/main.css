@@ -1,5 +1,5 @@
 body {
-  font-family: Monospace;
+  font-family: Helvetica;
   margin: 0px;
   overflow: hidden;
 }
@@ -34,9 +34,11 @@ body {
   display: block;
   background: rgba(0, 0, 0, 0.5);
   color:white;
-  width:60%;
+  width:30%;
   height: 60%;
   overflow: scroll;
+  border-radius: 10px;
+  text-align: center;
 
 }
 
