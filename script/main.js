@@ -6,6 +6,12 @@ var cubeLength = 500;
 aframe_init();
 
 function aframe_init(){
+
+  if (!Detector.webgl){
+    alert("Your browser doesn't support webgl");
+    return;
+  }
+
   AFRAME.registerComponent('videocube', {
     init: function () {
         var el = this.el;  // Entity.
