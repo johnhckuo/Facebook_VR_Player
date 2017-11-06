@@ -11,6 +11,8 @@ function aframe_init(){
     alert("Your browser doesn't support webgl");
     return;
   }
+  try{
+
 
   AFRAME.registerComponent('videocube', {
     init: function () {
@@ -80,5 +82,8 @@ function aframe_init(){
 
     }
   });
+}catch(e){
+  alert(e);
+}
 
 }
