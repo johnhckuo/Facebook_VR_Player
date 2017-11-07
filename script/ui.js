@@ -15,8 +15,8 @@ function ui_init(){
     f1.add(gui_value, 'submit');
 
     var f2 = gui.addFolder('Video Controller');
-    f2.add(gui_value, 'speed', 0, 2);
-    f2.add(gui_value, 'pause');
+    f2.add(gui_value, "Play");
+    f2.add(gui_value, 'Pause');
 
     gui.add(gui_value, "showVideoList").onFinishChange(function(){
       if (!videoRetrieved){
@@ -30,7 +30,6 @@ function ui_init(){
         $("#videoList").fadeOut();
       }
     }).listen();
-
 
 }
 
@@ -59,7 +58,6 @@ function displayVideoList(videos){
 function initValue(){
   this.page_Id = '360vidz';
   this.speed = 1;
-  this.pause = false;
   this.showVideoList = false;
   this.submit = function() {
     var _id = this.page_Id;
@@ -71,6 +69,12 @@ function initValue(){
       retrieveData(_id);
     });
   };
+  this.Play = function(){
+    video.play();
+  }
+  this.Pause = function(){
+    video.pause();
+  }
 };
 
 function event_init(){

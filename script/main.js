@@ -87,5 +87,4 @@ function cube_init() {
 
   el.setObject3D('mesh', cube);
 
-  video.play();
 }
