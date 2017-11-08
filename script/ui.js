@@ -1,12 +1,12 @@
 var videoRetrieved = false;
 var gui_value;
+var fadeSpeed = 0;
 
 ui_init();
 event_init();
 
 function ui_init(){
-
-    // dat gui
+  // dat gui
     gui_value = new initValue();
     var gui = new dat.GUI();
 
@@ -25,16 +25,16 @@ function ui_init(){
       }
 
       if ($("#videoList").css("display") == "none"){
-        $("#videoList").fadeIn();
+        $("#videoList").fadeIn(fadeSpeed);
       }else{
-        $("#videoList").fadeOut();
+        $("#videoList").fadeOut(fadeSpeed);
       }
     }).listen();
 
 }
 
 function playVideo(src){
-
+  $("body").loading("start");
   video = document.getElementById( 'video' );
   video.autoplay = true;
   video.src = src;
@@ -49,6 +49,7 @@ function playVideo(src){
 }
 
 function displayVideoList(videos){
+  $("body").loading('stop');
   console.log(videos);
   for (var i = 0 ; i < videos.length ; i++){
     $(".videoTable tbody").append("<tr><th scope='row'>"+ (i+1) +"</th><td>"+videos[i].title+"</td><td><button type='button' class='btn btn-info' value="+videos[i].source+">Play</button></td></tr>");
@@ -81,12 +82,12 @@ function event_init(){
   $(".videoTable").on("click", "button", function(){
     console.log(this.value);
     playVideo(this.value);
-    $("#videoList").fadeOut();
+    $("#videoList").fadeOut(fadeSpeed);
     gui_value.showVideoList = false;
   });
 
   $(".listContainer").on("click", function(){
-    $("#videoList").fadeOut();
+    $("#videoList").fadeOut(fadeSpeed);
     gui_value.showVideoList = false;
   });
 }

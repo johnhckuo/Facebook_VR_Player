@@ -1,5 +1,5 @@
 function retrieveData(id){
-
+  $("body").loading('start');
   FB.api('/'+id, {fields: 'videos{source, title}'}, function(response) {
     console.log("video retrieval success");
     $("#videoList").fadeIn();

@@ -86,5 +86,7 @@ function cube_init() {
   cube.needsUpdate = true;
 
   el.setObject3D('mesh', cube);
+  $("body").loading("stop");
+
 
 }
