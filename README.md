@@ -1,15 +1,14 @@
-<p align=center>
-<img src="https://i.imgur.com/eWrp9Di.jpg">
-</p>
-<p align=center>
-<a target="_blank" href="https://opensource.org/licenses/MIT" title="License: MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
-<a target="_blank" href="http://makeapullrequest.com" title="PRs Welcome"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
-</p> 
 
-# Facebook 360 Video Player
+
+# Facebook 360 Video Player <a target="_blank" href="https://opensource.org/licenses/MIT" title="License: MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a> <a target="_blank" href="http://makeapullrequest.com" title="PRs Welcome"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
 
 A web VR player for Facebook 360 video using A-Frame.
 
+
+
+<p align=center>
+<img src="https://i.imgur.com/eWrp9Di.jpg">
+</p>
 ## Usage
 1. Copy the ID of Facebook fanpage which posts a 360 degree videos. (The page ID is the string after the URL of Facebook)<br />
 <p align=center>
