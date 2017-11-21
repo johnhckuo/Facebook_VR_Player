@@ -9,24 +9,31 @@ A webVR player for Facebook 360° videos using A-Frame.
 
 ## Usage
 
+<p>
 1. Copy the ID of Facebook fanpage which posts a 360° videos. (The page ID is the string after the URL of Facebook)<br />
+</p>
 <p align=center>
 <img src="https://i.imgur.com/WfZsb0O.png">
 </p>
 Take https://www.facebook.com/360vidz/ for example, its page ID will be '360vidz'. <strong>Copy it!</strong><br /><br />
+<p>
 2. Paste the ID to page_Id and press 'submit'. We will retrieve all the playable 360° videos for you in seconds.<br />
-
+</p>
 <p align=center>
 <img src="https://i.imgur.com/PeJCjEF.png">
 </p>
+<p>
 3. Choose the video you would like to play and press the 'Play' Button.<br />
-
+</p>
 <p align=center>
 <img src="https://i.imgur.com/eqoUcoY.png">
 </p>
-
-4. Enter VR mode by pressing the cardboard icon at the right-bottom corner.<br /><br />
+<p>
+4. Enter VR mode by pressing the cardboard icon at the right-bottom corner.
+</p>
+<p>
 5. If you want to select other video, just press the showVideoList on the control panel.<br />You can also start or stop the video in the videoController tag.
+</p>
 
 ## Contributing
 
