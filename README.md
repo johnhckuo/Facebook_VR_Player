@@ -1,8 +1,8 @@
 
 
-# Facebook 360 Video Player <a target="_blank" href="https://opensource.org/licenses/MIT" title="License: MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a> <a target="_blank" href="http://makeapullrequest.com" title="PRs Welcome"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
+# Facebook 360° Video Player <a target="_blank" href="https://opensource.org/licenses/MIT" title="License: MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a> <a target="_blank" href="http://makeapullrequest.com" title="PRs Welcome"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
 
-A web VR player for Facebook 360 video using A-Frame.
+A web VR player for Facebook 360° video using A-Frame.
 
 
 
@@ -10,12 +10,12 @@ A web VR player for Facebook 360 video using A-Frame.
 <img src="https://i.imgur.com/eWrp9Di.jpg">
 </p>
 ## Usage
-1. Copy the ID of Facebook fanpage which posts a 360 degree videos. (The page ID is the string after the URL of Facebook)<br />
+1. Copy the ID of Facebook fanpage which posts a 360° videos. (The page ID is the string after the URL of Facebook)<br />
 <p align=center>
 <img src="https://i.imgur.com/WfZsb0O.png">
 </p>
 Take https://www.facebook.com/360vidz/ for example, its page ID will be '360vidz'. <strong>Copy it!</strong><br /><br />
-2. Paste the ID to page_Id and press 'submit'. We will retrieve all the playable 360 videos for you in seconds.<br />
+2. Paste the ID to page_Id and press 'submit'. We will retrieve all the playable 360° videos for you in seconds.<br />
 <p align=center>
 <img src="https://i.imgur.com/PeJCjEF.png">
 </p>
