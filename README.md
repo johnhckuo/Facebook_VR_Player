@@ -11,16 +11,16 @@
 A web VR player for Facebook 360 video using A-Frame.
 
 ## Usage
-1. Copy the ID of Facebook fanpage which posts a 360 degree videos. (The page ID is the string after the URL of Facebook)
+1. Copy the ID of Facebook fanpage which posts a 360 degree videos. (The page ID is the string after the URL of Facebook)<br />
 <p align=center>
 <img src="https://i.imgur.com/WfZsb0O.png">
 </p>
-Take https://www.facebook.com/360vidz/ for example, its page ID will be '360vidz'. Copy it! 
-2. Paste the ID to page_Id and press 'submit'. We will retrieve all the playable 360 videos for you in seconds.
+Take https://www.facebook.com/360vidz/ for example, its page ID will be '360vidz'. <strong>Copy it!</strong> 
+2. Paste the ID to page_Id and press 'submit'. We will retrieve all the playable 360 videos for you in seconds.<br />
 <p align=center>
 <img src="https://i.imgur.com/PeJCjEF.png">
 </p>
-3. Choose the video you would like to play and press the 'Play' Button.
+3. Choose the video you would like to play and press the 'Play' Button.<br />
 <p align=center>
 <img src="https://i.imgur.com/eqoUcoY.png">
 </p>
