@@ -8,6 +8,7 @@ var source = "video/test.mp4";
 aframe_init();
 
 function aframe_init(){
+  $("body").loading("start");
 
   if (!Detector.webgl){
     alert("Your browser doesn't support webgl");

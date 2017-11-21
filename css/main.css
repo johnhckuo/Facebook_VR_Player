@@ -34,9 +34,10 @@ body {
   display: block;
   background: rgba(0, 0, 0, 0.5);
   color:white;
-  width:30%;
+  width:70%;
   height: 60%;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
   border-radius: 10px;
   text-align: center;
 
