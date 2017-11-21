@@ -15,7 +15,7 @@ A web VR player for Facebook 360 video using A-Frame.
 <p align=center>
 <img src="https://i.imgur.com/WfZsb0O.png">
 </p>
-Take https://www.facebook.com/360vidz/ for example, its page ID will be '360vidz'. <strong>Copy it!</strong> 
+Take https://www.facebook.com/360vidz/ for example, its page ID will be '360vidz'. <strong>Copy it!</strong><br /><br />
 2. Paste the ID to page_Id and press 'submit'. We will retrieve all the playable 360 videos for you in seconds.<br />
 <p align=center>
 <img src="https://i.imgur.com/PeJCjEF.png">
